@@ -12,6 +12,7 @@ struct VocabularyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: [VocabularySet.self, Vocabulary.self, Language.self], inMemory: true)
         }
     }
 }
