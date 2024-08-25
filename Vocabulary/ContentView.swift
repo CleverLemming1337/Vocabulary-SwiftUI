@@ -11,11 +11,12 @@ struct ContentView: View {
                     NavigationLink(destination: VocabularySetList(), label: { Label("Vocabulary sets", systemImage: "rectangle.stack.fill") })
                 }
                 Section("Dictionary") {
-                    NavigationLink(destination: ComingSoonScreen(), label: { Label("Search", systemImage: "book.closed.fill") })
+                    NavigationLink(destination: ComingSoonScreen(), label: { Label("Your vocabulary", systemImage: "book.closed.fill") })
+                    NavigationLink(destination: ComingSoonScreen(), label: { Label("Dictionary", systemImage: "book.closed") })
                     NavigationLink(destination: ComingSoonScreen(), label: { Label("Translate", systemImage: "translate") })
                 }
                 Section("More") {
-                    NavigationLink(destination: ComingSoonScreen(), label: { Label("Settings", systemImage: "gear") })
+                    NavigationLink(destination: SettingsView(), label: { Label("Settings", systemImage: "gear") })
                     NavigationLink(destination: AboutView(), label: { Label("About this app", systemImage: "info.circle") })
                 }
             }

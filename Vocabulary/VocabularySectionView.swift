@@ -33,10 +33,12 @@ struct VocabularySectionView: View {
             .onDelete(perform: deleteVocabulary)
         }
         .toolbar {
+            #if os(iOS)
             ToolbarItem(placement: .topBarTrailing) {
                 EditButton()
                     .buttonStyle(.borderless)
             }
+            #endif
         }
         .navigationTitle("Section \(section.number)")
         .sheet(isPresented: $addVocabularySheet) {
