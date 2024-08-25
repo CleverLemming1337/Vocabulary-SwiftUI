@@ -241,6 +241,7 @@ struct VocabularySectionView: View {
     let toLang: Language
     let section: VocabularySection
     @Query var vocabularies: [Vocabulary]
+    @Environment(\.modelContext) var modelContext
     
     @State private var addVocabularySheet = false
     var body: some View {
@@ -252,13 +253,26 @@ struct VocabularySectionView: View {
                 VStack(alignment: .leading) {
                     Text(voc.to)
                     Text(voc.from)
-                        .font(.subheadline)
+                        .font(.caption)
+                        .foregroundStyle(.gray)
                 }
+            }
+            .onDelete(perform: deleteVocabulary)
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                EditButton()
+                    .buttonStyle(.borderless)
             }
         }
         .navigationTitle("Section \(section.number)")
         .sheet(isPresented: $addVocabularySheet) {
             AddVocabularySheet(sectionId: section.id, fromLang: fromLang, toLang: toLang)
+        }
+    }
+    func deleteVocabulary(_ offsets: IndexSet) {
+        for i in offsets {
+            modelContext.delete(vocabularies[i])
         }
     }
 }
