@@ -20,6 +20,7 @@ struct SheetTopBar: ViewModifier {
             content
                 .toolbar {
                     if cancel != nil || cancelFunc == nil {
+                        #if os(iOS)
                         ToolbarItem(placement: .topBarLeading) {
                             Button(cancel!, role: .cancel) {
                                 if destructiveCancel {
@@ -30,14 +31,35 @@ struct SheetTopBar: ViewModifier {
                                 }
                             }
                         }
+                        #else
+                        ToolbarItem(placement: .navigation) {
+                            Button(cancel!, role: .cancel) {
+                                if destructiveCancel {
+                                    showDialog = true
+                                }
+                                else {
+                                    cancelFunc!()
+                                }
+                            }
+                        }
+                        #endif
                     }
                     if doneFunc != nil {
+                        #if os(iOS)
                         ToolbarItem(placement: .topBarTrailing) {
                             Button(done) {
                                 doneFunc!()
                             }
                             .disabled(disabledFunc != nil ? disabledFunc!() : false)
                         }
+                        #else
+                        ToolbarItem(placement: .navigation) {
+                            Button(done) {
+                                doneFunc!()
+                            }
+                            .disabled(disabledFunc != nil ? disabledFunc!() : false)
+                        }
+                        #endif
                     }
                 }
                 .navigationTitle(title)
