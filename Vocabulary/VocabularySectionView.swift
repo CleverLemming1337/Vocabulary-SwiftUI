@@ -30,7 +30,11 @@ struct VocabularySectionView: View {
                         .foregroundStyle(.gray)
                 }
             }
-            .onDelete(perform: deleteVocabulary)
+            .onDelete(perform: { indexSet in
+                for i in indexSet {
+                    modelContext.delete(vocabularies[i])
+                }
+            })
         }
         .toolbar {
             #if os(iOS)
@@ -43,11 +47,6 @@ struct VocabularySectionView: View {
         .navigationTitle("Section \(section.number)")
         .sheet(isPresented: $addVocabularySheet) {
             AddVocabularySheet(sectionId: section.id, fromLang: fromLang, toLang: toLang)
-        }
-    }
-    func deleteVocabulary(_ offsets: IndexSet) {
-        for i in offsets {
-            modelContext.delete(vocabularies[i])
         }
     }
 }

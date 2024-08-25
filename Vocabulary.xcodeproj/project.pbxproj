@@ -16,6 +16,7 @@
 		632423222C7B867400365CCF /* VocabularySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632423212C7B867400365CCF /* VocabularySectionView.swift */; };
 		632423242C7B868D00365CCF /* AddVocabularySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632423232C7B868D00365CCF /* AddVocabularySheet.swift */; };
 		632423262C7B86C000365CCF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632423252C7B86C000365CCF /* SettingsView.swift */; };
+		632423282C7B8D0800365CCF /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632423272C7B8D0800365CCF /* LanguageView.swift */; };
 		63383D802C7246C200280909 /* VocabularyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63383D7F2C7246C200280909 /* VocabularyApp.swift */; };
 		63383D822C7246C200280909 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63383D812C7246C200280909 /* ContentView.swift */; };
 		63383D842C7246C400280909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63383D832C7246C400280909 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		632423212C7B867400365CCF /* VocabularySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularySectionView.swift; sourceTree = "<group>"; };
 		632423232C7B868D00365CCF /* AddVocabularySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVocabularySheet.swift; sourceTree = "<group>"; };
 		632423252C7B86C000365CCF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		632423272C7B8D0800365CCF /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		63383D7C2C7246C200280909 /* Vocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63383D7F2C7246C200280909 /* VocabularyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyApp.swift; sourceTree = "<group>"; };
 		63383D812C7246C200280909 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				63383D7F2C7246C200280909 /* VocabularyApp.swift */,
 				63383D812C7246C200280909 /* ContentView.swift */,
+				632423272C7B8D0800365CCF /* LanguageView.swift */,
 				632423252C7B86C000365CCF /* SettingsView.swift */,
 				632423232C7B868D00365CCF /* AddVocabularySheet.swift */,
 				632423212C7B867400365CCF /* VocabularySectionView.swift */,
@@ -170,6 +173,7 @@
 			files = (
 				6324231E2C7B863600365CCF /* AddLanguageView.swift in Sources */,
 				63383D822C7246C200280909 /* ContentView.swift in Sources */,
+				632423282C7B8D0800365CCF /* LanguageView.swift in Sources */,
 				63383D802C7246C200280909 /* VocabularyApp.swift in Sources */,
 				632423182C7B85E600365CCF /* VocabularySetList.swift in Sources */,
 				632423242C7B868D00365CCF /* AddVocabularySheet.swift in Sources */,

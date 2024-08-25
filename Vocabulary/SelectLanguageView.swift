@@ -33,7 +33,7 @@ struct SelectLanguageView: View {
             isPresented = false
         })
         .sheet(isPresented: $addLang) {
-            AddLangView(isPresented: $addLang)
+            AddLangView()
         }
         
     }

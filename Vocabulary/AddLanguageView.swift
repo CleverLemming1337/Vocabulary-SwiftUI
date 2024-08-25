@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftData
 
 struct AddLangView: View {
-    @Binding var isPresented: Bool
+    @Environment(\.dismiss) var dismiss
     @State private var langName = ""
     @Environment(\.modelContext) var modelContext
     var body: some View {
@@ -20,10 +20,10 @@ struct AddLangView: View {
             }
         }
         .sheetTopBar(title: "Create new language", done: "**Create**", cancelFunc: {
-            isPresented = false
+            dismiss()
         }, destructiveCancel: true, disabledFunc: { langName == "" }) {
             modelContext.insert(Language(name: langName))
-            isPresented = false
+            dismiss()
         } // I'm sorry, this is not beautiful!
     }
 }

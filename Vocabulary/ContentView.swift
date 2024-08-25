@@ -16,6 +16,7 @@ struct ContentView: View {
                     NavigationLink(destination: ComingSoonScreen(), label: { Label("Translate", systemImage: "translate") })
                 }
                 Section("More") {
+                    NavigationLink(destination: LanguageView(), label: { Label("Your languages", systemImage: "character.ja") })
                     NavigationLink(destination: SettingsView(), label: { Label("Settings", systemImage: "gear") })
                     NavigationLink(destination: AboutView(), label: { Label("About this app", systemImage: "info.circle") })
                 }
@@ -29,5 +30,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: [VocabularySet.self, Vocabulary.self, Language.self], inMemory: true)
+        .modelContainer(for: MODELS, inMemory: false)
 }

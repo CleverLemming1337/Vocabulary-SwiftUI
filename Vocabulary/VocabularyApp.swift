@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
+
+let MODELS: [any PersistentModel.Type] = [VocabularySet.self, Vocabulary.self, Language.self]
 
 @main
 struct VocabularyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: [VocabularySet.self, Vocabulary.self, Language.self], inMemory: false)
+                .modelContainer(for: MODELS, inMemory: false)
         }
     }
 }
