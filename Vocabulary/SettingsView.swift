@@ -45,6 +45,7 @@ struct SettingsView: View {
         }, message: {
             Text(errorMessage)
         })
+        .navigationTitle("Settings")
     }
 }
 
