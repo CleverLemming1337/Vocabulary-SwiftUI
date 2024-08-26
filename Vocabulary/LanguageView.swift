@@ -22,11 +22,12 @@ struct LanguageView: View {
             ForEach(languages) { language in
                 Text(language.name)
             }
-            .onDelete(perform: { indexSet in
-                for i in indexSet {
-                    modelContext.delete(languages[i])
-                }
-            })
+            // Deleteing a language causes the app to crash
+            //.onDelete(perform: { indexSet in
+            //    for i in indexSet {
+            //        modelContext.delete(languages[i])
+            //    }
+            //})
         }
         .navigationTitle("Your languages")
         .sheet(isPresented: $showSheet) {
