@@ -61,7 +61,7 @@ struct AboutView: View {
                     Text(build)
                 }
             }
-            Link(destination: URL(string: "https://github.com/CleverLemming1337/Vocabulary-Swift")!, label: { Text("View on GitHub") })
+            Link(destination: URL(string: "https://github.com/CleverLemming1337/Vocabulary-SwiftUI")!, label: { Text("View on GitHub") })
         }
         .navigationTitle("About this app")
     }
