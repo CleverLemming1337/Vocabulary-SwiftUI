@@ -51,6 +51,7 @@ import SwiftData
     let exampleTo: String?
     let comment: String?
     let showInDict: Bool
+    let weakness: UInt = 0
     
     init(sectionId: UUID?, from: String, to: String, classification: String?, exampleFrom: String?, exampleTo: String?, comment: String?, showInDict: Bool) {
         self.sectionId = sectionId
