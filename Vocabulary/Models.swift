@@ -66,7 +66,7 @@ import SwiftData
 }
 
 @Model class Language {
-    let name: String
+    @Attribute(.unique) let name: String
     
     init(name: String) {
         self.name = name
