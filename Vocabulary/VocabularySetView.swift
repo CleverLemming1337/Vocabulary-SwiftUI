@@ -12,6 +12,7 @@ import SwiftData
 struct VocabularySetView: View {
     let set: VocabularySet
     @Query var vocabulary: [Vocabulary]
+    
     var body: some View {
         List {
             Section("Pinned words") {
@@ -20,6 +21,7 @@ struct VocabularySetView: View {
             Section("Weak words") {
                 ComingSoonLabel()
             }
+            Text("\(set.from) > \(set.to)")
             Section("Sections") {
                 ForEach(set.sections.sorted(by: { $0.number < $1.number }), id: \.self) { section in
                     NavigationLink(destination: { VocabularySectionView(fromLang: set.from, toLang: set.to, section: section) }) {

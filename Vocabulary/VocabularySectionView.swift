@@ -10,10 +10,13 @@ import SwiftUI
 import SwiftData
 
 struct VocabularySectionView: View {
-    let fromLang: Language
-    let toLang: Language
+    let fromLang: String
+    let toLang: String
     let section: VocabularySection
+    
     @Query var vocabularies: [Vocabulary]
+    @Query var languages: [Language]
+    
     @Environment(\.modelContext) var modelContext
     
     @State private var addVocabularySheet = false

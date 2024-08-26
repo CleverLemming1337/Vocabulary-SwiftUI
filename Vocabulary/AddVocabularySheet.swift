@@ -14,8 +14,8 @@ struct AddVocabularySheet: View {
     @Environment(\.modelContext) var modelContext
     
     let sectionId: UUID
-    let fromLang: Language
-    let toLang: Language
+    let fromLang: String
+    let toLang: String
     
     @State private var from = ""
     @State private var to = ""
@@ -27,10 +27,10 @@ struct AddVocabularySheet: View {
     
     var body: some View {
         List {
-            Section(toLang.name) {
+            Section(toLang) {
                 TextField("Write in \(toLang)", text: $to)
             }
-            Section(fromLang.name) {
+            Section(fromLang) {
                 TextField("Write in \(fromLang)", text: $from)
             }
             Section("Classification") {

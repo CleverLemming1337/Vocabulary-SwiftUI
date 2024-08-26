@@ -12,10 +12,10 @@ import SwiftData
     let name: String
     let comment: String
     let sections: [VocabularySection]
-    let from: Language
-    let to: Language
+    let from: String // working with Language UUIDs does not work, therefore using Language names
+    let to: String
     
-    init(from: Language, to: Language, name: String, comment: String) {
+    init(from: String, to: String, name: String, comment: String) {
         self.name = name
         self.comment = comment
         self.from = from
